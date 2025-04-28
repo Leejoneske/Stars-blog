@@ -4,9 +4,17 @@
     {
       "src": "public/index.php",
       "use": "@vercel/php"
+    },
+    {
+      "src": "resources/js/**/*.vue",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
+    {
+      "src": "/build/assets/(.*)",
+      "dest": "/public/build/assets/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "/public/index.php"
@@ -14,6 +22,15 @@
   ],
   "env": {
     "APP_ENV": "production",
-    "TELEGRAM_TOKEN": "@cosmic-stars-bot-token"
+    "APP_KEY": "base64:your_generated_key_here", // Run `php artisan key:generate --show`
+    "TELEGRAM_BOT_TOKEN": "@your_telegram_bot_token",
+    "DB_CONNECTION": "json",
+    "SESSION_DRIVER": "file"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production",
+      "VITE_APP_URL": "https://your-app.vercel.app"
+    }
   }
 }
