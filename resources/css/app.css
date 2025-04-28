@@ -1,0 +1,37 @@
+ :root {
+    --color-primary: #293239;
+    --color-secondary: #D2E5E9;
+    --color-accent: #E3ECED;
+    --color-white: #FFFFFF;
+}
+
+body {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    font-family: 'Inter', sans-serif;
+}
+
+.header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.star-emoji {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
