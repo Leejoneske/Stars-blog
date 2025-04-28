@@ -131,3 +131,13 @@ class TelegramService
         Storage::put("telegram/{$filename}", json_encode($data));
     }
 }
+public function __construct()
+{
+    $this->botToken = config('telegram.bot_token');
+    
+    if (empty($this->botToken)) {
+        throw new \RuntimeException('Telegram bot token not configured!');
+    }
+    
+    $this->apiUrl = "https://api.telegram.org/bot{$this->botToken}/";
+}
