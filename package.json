@@ -1,1 +1,11 @@
-
+{
+  "name": "stars-blog",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^4.4.0",
+    "laravel-vite-plugin": "^0.8.0"
+  }
+}
